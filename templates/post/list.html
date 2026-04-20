@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>templates/post/list.html</title>
+</head>
+<body>
+    <div class="container">
+        <a href="/post/new">새글 작성</a>
+        <h3>글 목록 입니다</h3>
+        <table border="1" cellpadding="8" cellspacing="0">
+            <thead>
+                <tr>
+                    <th>번호</th>
+                    <th>작성자</th>
+                    <th>제목</th>
+                    <th>내용</th>
+                    <th>작성일</th>
+                </tr>
+            </thead>
+            <tbody>           
+            {% for post in posts %} <!-- posts 리스트를 순회하면서 각 post에 대해 아래 코드를 반복함 -->
+                <tr>
+                    <td>{{ post.num }}</td>       <!-- post의 num(번호) 필드 값을 출력 -->
+                    <td>{{ post.writer }}</td>    <!-- post의 writer(작성자) 필드 값을 출력 -->
+                    <td>{{ post.title }}</td>     <!-- post의 title(제목) 필드 값을 출력 -->
+                    <td>{{ post.content }}</td>   <!-- post의 content(내용) 필드 값을 출력 -->
+                    <td>{{ post.created_at }}</td><!-- post의 created_at(작성일) 필드 값을 출력 -->
+                </tr>
+            {% endfor %} <!-- for 반복문 종료 -->
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
