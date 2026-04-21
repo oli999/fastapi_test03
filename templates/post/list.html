@@ -17,6 +17,7 @@
                     <th>제목</th>
                     <th>내용</th>
                     <th>작성일</th>
+                    <th>삭제</th>
                 </tr>
             </thead>
             <tbody>           
@@ -27,6 +28,9 @@
                     <td>{{ post.title }}</td>     <!-- post의 title(제목) 필드 값을 출력 -->
                     <td>{{ post.content }}</td>   <!-- post의 content(내용) 필드 값을 출력 -->
                     <td>{{ post.created_at }}</td><!-- post의 created_at(작성일) 필드 값을 출력 -->
+                    <td>
+                        <a href="/post/delete/{{ post.num }}">삭제</a>
+                    </td>
                 </tr>
             {% endfor %} <!-- for 반복문 종료 -->
             </tbody>
