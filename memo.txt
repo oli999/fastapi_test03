@@ -1,4 +1,4 @@
-# python 가상솬경 만들기
+# python 가상환경 만들기
 python -m venv venv
 
 # 가상 환경 활성화
